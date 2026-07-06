@@ -34,7 +34,7 @@ class Wakuwi < Formula
       Or run it manually:
         wakuwi
 
-      Then open http://localhost:8080 in your browser.
+      Then open http://localhost:9753 in your browser.
     EOS
   end
 
