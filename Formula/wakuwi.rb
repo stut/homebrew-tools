@@ -19,6 +19,13 @@ class Wakuwi < Formula
     bin.install Dir["wakuwi-darwin-*"].first => "wakuwi"
   end
 
+  service do
+    run [opt_bin/"wakuwi"]
+    keep_alive true
+    log_path var/"log/wakuwi.log"
+    error_log_path var/"log/wakuwi.log"
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/wakuwi --version 2>&1", 1)
   end
