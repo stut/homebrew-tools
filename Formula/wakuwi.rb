@@ -26,6 +26,18 @@ class Wakuwi < Formula
     error_log_path var/"log/wakuwi.log"
   end
 
+  def caveats
+    <<~EOS
+      To start wakuwi as a background service:
+        brew services start stut/tools/wakuwi
+
+      Or run it manually:
+        wakuwi
+
+      Then open http://localhost:8080 in your browser.
+    EOS
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/wakuwi --version 2>&1", 1)
   end
