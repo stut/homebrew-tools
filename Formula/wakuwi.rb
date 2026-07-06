@@ -1,17 +1,17 @@
 class Wakuwi < Formula
   desc "Lightweight, read-only Kubernetes UI"
   homepage "https://github.com/stut/wakuwi"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/stut/wakuwi/releases/download/v#{version}/wakuwi-darwin-arm64"
-      sha256 "f0d8df092388022afd6003c448fb5a8a29316b0f389277a26fe5b2639c3588a8"
+      sha256 "5efae42a7e5fee3c6307cbcb83bfee93386eaf48320d415c5a9a56a7f7b8f98a"
     end
     on_intel do
       url "https://github.com/stut/wakuwi/releases/download/v#{version}/wakuwi-darwin-amd64"
-      sha256 "51372feaa730160a3d08be64a6af3400e09501bde20497040aa93025c2f24fac"
+      sha256 "58d17cf601894cf1c8bbe02de4391210f1d03746c8b61fb56c671eb49d46e09b"
     end
   end
 
