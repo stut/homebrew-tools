@@ -1,22 +1,33 @@
 class Wakuwi < Formula
   desc "Lightweight, read-only Kubernetes UI"
   homepage "https://github.com/stut/wakuwi"
-  version "1.0.0"
+  version "1.1.0"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/stut/wakuwi/releases/download/v#{version}/wakuwi-darwin-arm64"
-      sha256 "6d50968096c3a084c50d2fbe6cc55e5cde0d52c799063635ea6ed0887c598c3c"
+      sha256 "9ab998fe443735ee4c6ad1abe29ea1baf071fdd3c2c3145318aabec64c1675e6"
     end
     on_intel do
       url "https://github.com/stut/wakuwi/releases/download/v#{version}/wakuwi-darwin-amd64"
-      sha256 "fb492e345c8c06f804730a49ca0549db4c5917e465c3a6f506fcc0fd8c4c2404"
+      sha256 "7e489e090dfafcd4b62016915b00722ab70380736441fb48a922e47e3a79310f"
+    end
+  end
+
+  on_linux do
+    on_arm do
+      url "https://github.com/stut/wakuwi/releases/download/v#{version}/wakuwi-linux-arm64"
+      sha256 "5b30d45c20a9db82a5ef8b41b64c4f06490b71f60608a427450ae129473a82e8"
+    end
+    on_intel do
+      url "https://github.com/stut/wakuwi/releases/download/v#{version}/wakuwi-linux-amd64"
+      sha256 "314f25ec979a09ba108492142c530fc9de98561feaf38634f632328d3864923a"
     end
   end
 
   def install
-    bin.install Dir["wakuwi-darwin-*"].first => "wakuwi"
+    bin.install Dir["wakuwi-*"].first => "wakuwi"
   end
 
   service do
